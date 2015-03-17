@@ -173,7 +173,7 @@ tempDict = {
 	'show in Google StreetView':
 		'mostra a Google StreetView',
 
-	// API libraries
+	// <API libraries>
 	// Genderize.io
 	
 	'gender of %s':
@@ -198,6 +198,40 @@ tempDict = {
 		'%txt és %txt al país amb codi %txt',
 	'%txt is %txt in language with code %txt':
 		'%txt és %txt en l\'idioma amb codi %txt',
+	
+	// Smart Citizen
+	
+	'all devices':
+		'tots els dispositius',
+	'device with id %n':
+		'dispositiu amb id %n',
+	'last reading of device with id %n':
+		'última lectura del dispositiu amb id %n',
+	'last day average of device with id %n':
+		'última mitjana diària del dispositiu amb id %n',
+	'readings between %n / %n / %n and %n / %n / %n of device with id %n':
+		'lectures entre %n / %n / %n i %n / %n / %n del dispositiu amb id %n',
+	'day average readings between %n / %n / %n and %n / %n / %n of device with id %n':
+		'mitjanes diàries entre %n / %n / %n i %n / %n / %n del dispositiu amb id %n',
+
+	// OpenWeatherMap
+	
+	'current conditions at %txt':
+		'condicions actuals a %txt',
+	'current conditions at long %n lat %n':
+		'condicions actuals a long %n lat %n',
+	'forecast for %n days in %txt':
+		'predicció per %n dies a %txt',
+	'forecast for %n days in long %n lat %n':
+		'predicció per %n dies a long %n lat %n',
+	'3-hour forecast for 5 days in %txt':
+		'predicció de 3 hores per 5 dies a %txt',
+	'3-hour forecast for 5 days in long %n lat %n':
+		'predicció de 3 hores per 5 dies a long %n lat %n',
+	'historical data for %txt':
+		'dades històriques de %txt',
+
+	// </API libraries>
 
 	// Missing strings
 	'JavaScript function ( %mult%s ) { %code }':
