@@ -106,7 +106,7 @@ SymbolMorph, isNil*/
 
 // Global stuff ////////////////////////////////////////////////////////
 
-modules.byob = '2015-March-02';
+modules.byob = '2015-June-25';
 
 // Declarations
 
@@ -2049,7 +2049,13 @@ BlockLabelFragment.prototype.defTemplateSpecFragment = function () {
         )) {
         suff = ' \u03BB';
     } else if (this.defaultValue) {
-        suff = ' = ' + this.defaultValue.toString();
+        if (this.type === '%n') {
+            suff = ' # = ' + this.defaultValue.toString();
+        } else { // 'any' or 'text'
+            suff = ' = ' + this.defaultValue.toString();
+        }
+    } else if (this.type === '%n') {
+        suff = ' #';
     }
     return this.labelString + suff;
 };
@@ -3291,15 +3297,17 @@ BlockExportDialogMorph.prototype.selectNone = function () {
 // BlockExportDialogMorph ops
 
 BlockExportDialogMorph.prototype.exportBlocks = function () {
-    var str = this.serializer.serialize(this.blocks);
+    var str = encodeURIComponent(
+        this.serializer.serialize(this.blocks)
+    );
     if (this.blocks.length > 0) {
-        window.open(encodeURI('data:text/xml,<blocks app="'
+        window.open('data:text/xml,<blocks app="'
             + this.serializer.app
             + '" version="'
             + this.serializer.version
             + '">'
             + str
-            + '</blocks>'));
+            + '</blocks>');
     } else {
         new DialogBoxMorph().inform(
             'Export blocks',
